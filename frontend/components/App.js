@@ -1,5 +1,13 @@
 import React from 'react'
 
+class Todo extends React.Component;
+
+class Todo extends React.Component {
+  render(){
+    return(<li>{todo.task} { todo.completed?<span>- coimpleted</span> : <span></span> }</li>);
+  };
+}
+
 class App extends React.Component {
   constructor() {
     super();
@@ -32,9 +40,10 @@ export default class App extends React.Component {
 
         <ul>
           {
-            todos.map(todos => {
-              return (<li>{todos.task} { todos.completed?<span>- completed</span> : <span></span></li>)
+            todos.map(todo=> {
+              return (<Todo todo={todo} />)
             })
+           <Todo />
           }
           
         </ul>
