@@ -23,14 +23,20 @@ class App extends React.Component {
 }
 export default class App extends React.Component {
   render() {
+    const { todos } = this.state;
+    console.log(todos);
+    console.log(this.state);
     return (
       <div>
         <h1>Todos</h1>
 
         <ul>
-          <li>Walk the dog </li>
-          <li>Take out the trash</li>
-          <li>Workout</li>
+          {
+            todos.map(todos => {
+              return (<li>{todos.task} { todos.completed?<span>- completed</span> : <span></span></li>)
+            })
+          }
+          
         </ul>
 
         <form>
